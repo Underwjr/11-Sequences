@@ -37,7 +37,7 @@ def main():
     run_test_sum_sequence()
     run_test_count_items_bigger_than()
     run_test_count_positive_sines()
-    # run_test_sum_first_n()
+    run_test_sum_first_n()
 
 
 def run_test_sum_sequence():
@@ -367,7 +367,7 @@ def run_test_count_items_bigger_than():
     # Done 4 (continued):  Add your 2 ADDITIONAL tests here:
 
     # Test 9:
-    sequence = [10, 25, 24, 27, 28 ,100, 40]
+    sequence = [10, 25, 24, 27, 28, 100, 40]
     threshold = 25
     expected = 4
     actual = count_items_bigger_than(sequence, threshold)
@@ -376,7 +376,7 @@ def run_test_count_items_bigger_than():
     print('       actual:  ', actual)
 
     # Test 10:
-    sequence = [5, 6, 7, 8 , 9, 23, 14, 17]
+    sequence = [5, 6, 7, 8, 9, 23, 14, 17]
     threshold = 6.5
     expected = 6
     actual = count_items_bigger_than(sequence, threshold)
@@ -574,7 +574,7 @@ def count_positive_sines(numbers):
 def run_test_sum_first_n():
     """ Tests the   sum_first_n   function. """
     # -------------------------------------------------------------------------
-    # TODO: 8. Implement this TEST function.
+    # Done: 8. Implement this TEST function.
     #   It TESTS the  sum_first_n  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests.
     #
@@ -645,6 +645,20 @@ def run_test_sum_first_n():
 
     # TO DO 8 (continued):  Add your 2 ADDITIONAL tests here:
 
+    # Test 8:
+    expected = 40
+    actual = sum_first_n([10, 30, 42, 20], 2)
+    print()
+    print('Test 8 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 9:
+    expected = 6
+    actual = sum_first_n([-20, 23, 3, 40], 3)
+    print()
+    print('Test 9 expected:', expected)
+    print('       actual:  ', actual)
+
 
 def sum_first_n(numbers, n):
     """
@@ -667,8 +681,14 @@ def sum_first_n(numbers, n):
       :type numbers:   list of tuple (of numbers)
       :type n: int
     """
+    total = 0
+    for k in range(n):
+        if n > 0:
+            if n <= len(numbers):
+                total += numbers[k]
+    return total
     # -------------------------------------------------------------------------
-    # TODO: 9. Implement and test this function.
+    # Done 9. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # RESTRICTION:
