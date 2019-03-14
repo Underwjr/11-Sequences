@@ -36,7 +36,7 @@ def main():
     """ Calls the   TEST   functions in this module. """
     run_test_sum_sequence()
     run_test_count_items_bigger_than()
-    # run_test_count_positive_sines()
+    run_test_count_positive_sines()
     # run_test_sum_first_n()
 
 
@@ -432,7 +432,7 @@ def count_items_bigger_than(numbers, threshold):
 def run_test_count_positive_sines():
     """ Tests the   count_positive_sines   function. """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # Done 6. Implement this TEST function.
     #   It TESTS the  count_positive_sines  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond what we supplied.
     #
@@ -529,6 +529,13 @@ def run_test_count_positive_sines():
 
     # TO DO 6 (continued):  Add your 1 ADDITIONAL test here:
 
+    # Test 11:
+    expected = 3
+    actual = count_positive_sines([2, 5, 6, 9, 1])
+    print()
+    print('Test 11 expected:', expected)
+    print('       actual:  ', actual)
+
 
 def count_positive_sines(numbers):
     """
@@ -553,8 +560,13 @@ def count_positive_sines(numbers):
     Type hints:
       :type sequence: list or tuple (of numbers)
     """
+    total = 0
+    for k in range(len(numbers)):
+        if math.sin(numbers[k]) > 0:
+            total += 1
+    return total
     # -------------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
 
